@@ -1,0 +1,16 @@
+{
+  "name": "dark-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "node build/test",
+    "build": "tsc"
+  },
+  "repository": "github:JustANutshell/dark-lib",
+  "author": "Dark",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^13.13.4"
+  }
+}
