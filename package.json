@@ -1,10 +1,10 @@
 {
-  "name": "dark-lib",
+  "name": "@dark_/dark-lib",
   "version": "1.0.0",
   "description": "",
   "main": "build/index.js",
   "scripts": {
-    "test": "node build/test",
+    "test": "node build/test/index",
     "build": "tsc"
   },
   "repository": "github:JustANutshell/dark-lib",
