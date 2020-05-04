@@ -1,26 +1,34 @@
 type arrFindResponse={
 	foundAnything:true,
-	foundValue:any,
-	foundIndex:number,
+	value:any,
+	index:number,
 }|{
 	foundAnything:false,
 }
-export function arrFind(arr:object,func:(arrEntry:any)=>boolean):arrFindResponse{
-	if(!Array.isArray(arr)) throw "arr wasn't array";
+export function arrFind(arr:any[],func:(arrEntry:any)=>boolean):arrFindResponse{
 	for(let a=0;a<arr.length;a++){
-		if(func(arr[a])) return {foundAnything:true,foundValue:arr[a],foundIndex:a};
+		if(func(arr[a])) return {foundAnything:true,value:arr[a],index:a};
 	}
 	return {foundAnything:false};
 }
-export function arrFindAsync(arr:object,func:(arrEntry:any)=>boolean):Promise<arrFindResponse>{
+export async function arrFindFuncAsync(arr:any[],func:(arrEntry:any)=>Promise<boolean>):Promise<arrFindResponse>{
+	for(let a=0;a<arr.length;a++){
+		if(await func(arr[a])) return {foundAnything:true,value:arr[a],index:a};
+	}
+	return {foundAnything:false};
+}
+export function arrFindAsync(arr:any[],func:(arrEntry:any)=>boolean|Promise<boolean>):Promise<arrFindResponse>{
 	return new Promise(function(resolve,reject){
-		if(!Array.isArray(arr)) throw "arr wasn't array";
 		let b=[];
 		for(let a=0;a<arr.length;a++){
-			b[b.length]=new Promise(function(resolve,reject){
-				resolve({_:func(arr[a]),value:arr[a],index:a});
+			b[b.length]=new Promise(async function(resolve,reject){
+				try{
+					resolve({_:await func(arr[a]),value:arr[a],index:a});
+				}catch(e){
+					reject(e);
+				}
 			}).then(function(a:any){
-				if(a._)resolve({foundAnything:true,foundValue:a.value,foundIndex:a.index});
+				if(a._)resolve({foundAnything:true,value:a.value,index:a.index});
 			}).catch(function(e){
 				reject(e);
 			});

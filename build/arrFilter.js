@@ -1,22 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function arrFind(arr, func) {
+function arrFilter(arr, func) {
+    let out = { content: [] };
     for (let a = 0; a < arr.length; a++) {
         if (func(arr[a]))
-            return { foundAnything: true, value: arr[a], index: a };
+            out.content[out.content.length] = { value: arr[a], index: a };
     }
-    return { foundAnything: false };
+    return out;
 }
-exports.arrFind = arrFind;
-async function arrFindFuncAsync(arr, func) {
+exports.arrFilter = arrFilter;
+async function arrFilterFuncAsync(arr, func) {
+    let out = { content: [] };
     for (let a = 0; a < arr.length; a++) {
         if (await func(arr[a]))
-            return { foundAnything: true, value: arr[a], index: a };
+            out.content[out.content.length] = { value: arr[a], index: a };
     }
-    return { foundAnything: false };
+    return out;
 }
-exports.arrFindFuncAsync = arrFindFuncAsync;
-function arrFindAsync(arr, func) {
+exports.arrFilterFuncAsync = arrFilterFuncAsync;
+function arrFilterAsync(arr, func) {
     return new Promise(function (resolve, reject) {
         let b = [];
         for (let a = 0; a < arr.length; a++) {
@@ -27,18 +29,18 @@ function arrFindAsync(arr, func) {
                 catch (e) {
                     reject(e);
                 }
-            }).then(function (a) {
-                if (a._)
-                    resolve({ foundAnything: true, value: a.value, index: a.index });
-            }).catch(function (e) {
-                reject(e);
             });
         }
         Promise.all(b).then(function (a) {
-            resolve({ foundAnything: false });
+            let out = { content: [] };
+            for (let c = 0; c < a.length; c++) {
+                if (a[c]._)
+                    out.content[out.content.length] = { value: a[c].value, index: a[c].index };
+            }
+            resolve(out);
         }).catch(function (e) {
             reject(e);
         });
     });
 }
-exports.arrFindAsync = arrFindAsync;
+exports.arrFilterAsync = arrFilterAsync;

@@ -2,4 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const arrFind_1 = require("./arrFind");
 exports.arrFind = arrFind_1.arrFind;
+exports.arrFindFuncAsync = arrFind_1.arrFindFuncAsync;
 exports.arrFindAsync = arrFind_1.arrFindAsync;
+const arrFilter_1 = require("./arrFilter");
+exports.arrFilter = arrFilter_1.arrFilter;
+exports.arrFilterFuncAsync = arrFilter_1.arrFilterFuncAsync;
+exports.arrFilterAsync = arrFilter_1.arrFilterAsync;
+const arrConnects_1 = require("./arrConnects");
+exports.arrConnects = arrConnects_1.arrConnects;
+const arrRmEntry_1 = require("./arrRmEntry");
+exports.arrRmEntry = arrRmEntry_1.arrRmEntry;
