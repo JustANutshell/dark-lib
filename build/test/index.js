@@ -4,6 +4,7 @@ const testArrFind_1 = require("./testArrFind");
 const testArrFilter_1 = require("./testArrFilter");
 const testArrConnect_1 = require("./testArrConnect");
 const testArrRmEntry_1 = require("./testArrRmEntry");
+const testArrEntry_1 = require("./testArrEntry");
 function wait(timems = 3000) {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
@@ -20,4 +21,6 @@ function wait(timems = 3000) {
     await testArrConnect_1.default();
     wait(200);
     await testArrRmEntry_1.default();
+    wait(200);
+    await testArrEntry_1.default();
 })();
