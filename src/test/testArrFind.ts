@@ -1,7 +1,10 @@
 import * as darkLib from "../index"
+import timer from "./timer"
 export default async function(){
 	console.log("\n\n-------- arrFind");
 	async function x(a:any){
+		console.log("testArr length:",a.length);
+		let b:timer;
 		darkLib.arrFind(a,function(b){return b==4});
 		darkLib.arrFind(a,function(b){return b==11});
 		darkLib.arrFind(a,function(b){return b>2});
@@ -12,22 +15,21 @@ export default async function(){
 		await darkLib.arrFindAsync(a,function(b){return b==11});
 		await darkLib.arrFindAsync(a,function(b){return b>2});
 
-		let b=new Date();
+		b=new timer("arrFind");
 		darkLib.arrFind(a,function(b){return b==4});
 		darkLib.arrFind(a,function(b){return b==11});
 		darkLib.arrFind(a,function(b){return b>2});
-		let c=new Date();
+		b.end();
+		b=new timer("arrFindFuncAsync");
 		await darkLib.arrFindFuncAsync(a,async function(b){return b==4});
 		await darkLib.arrFindFuncAsync(a,async function(b){return b==11});
 		await darkLib.arrFindFuncAsync(a,async function(b){return b>2});
-		let d=new Date();
+		b.end();
+		b=new timer("arrFindAsync");
 		await darkLib.arrFindAsync(a,function(b){return b==4});
 		await darkLib.arrFindAsync(a,function(b){return b==11});
 		await darkLib.arrFindAsync(a,function(b){return b>2});
-		let e=new Date();
-		console.log("normal: ",(c.getTime()-b.getTime())+"ms");
-		console.log("fasync: ",(d.getTime()-c.getTime())+"ms");
-		console.log("async:  ",(e.getTime()-d.getTime())+"ms");
+		b.end();
 	}
 			let a=[];
 			for(let c=0;c<10;c++){

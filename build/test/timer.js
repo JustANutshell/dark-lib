@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const darkLib = require("../index");
 class timer {
-    constructor(name, expectedTimeLength = 5) {
+    constructor(name, expectedTimeLength = 3) {
         Object.defineProperty(this, "start", {
             enumerable: true,
             configurable: true,

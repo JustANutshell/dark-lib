@@ -3,7 +3,7 @@ export default class timer{
 	start:Date;
 	name:string;
 	expectedTimeLength:number;
-	constructor(name:string,expectedTimeLength:number=5){
+	constructor(name:string,expectedTimeLength:number=3){
 		this.start=new Date();
 		this.name=name;
 		this.expectedTimeLength=expectedTimeLength;
