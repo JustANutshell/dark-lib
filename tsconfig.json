@@ -3,6 +3,7 @@
     "target": "ES2018",
     "module": "commonjs",
     "declaration": true,
+    "useDefineForClassFields": true,
     "outDir": "./build",
     "strict": true
   },
