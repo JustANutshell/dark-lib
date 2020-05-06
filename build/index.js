@@ -12,3 +12,5 @@ const arrConnects_1 = require("./arrConnects");
 exports.arrConnects = arrConnects_1.arrConnects;
 const arrRmEntry_1 = require("./arrRmEntry");
 exports.arrRmEntry = arrRmEntry_1.arrRmEntry;
+const strFill_1 = require("./strFill");
+exports.strFill = strFill_1.strFill;
