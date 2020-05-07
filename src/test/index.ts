@@ -11,14 +11,14 @@ function wait(timems:number=3000):Promise<void>{
 	});
 }
 (async function(){
-	wait(100);
+	await wait(10);
 	await arrFind();
-	wait(200);
+	await wait(20);
 	await arrFilter();
-	wait(200);
+	await wait(20);
 	await arrConnest();
-	wait(200);
+	await wait(20);
 	await arrRmEntry();
-	wait(200);
+	await wait(20);
 	await arrEntry();
 })();
