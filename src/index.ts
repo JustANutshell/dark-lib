@@ -12,6 +12,8 @@ export {arrConnects,};
 import {arrRmEntry} from "./arrRmEntry"
 export {arrRmEntry,};
 
+import {arrRmDoubles} from "./arrRmDoubles"
+export {arrRmDoubles,};
 
 import {arrEntry,arrEntryGetFirstEntry,arrEntryGetFirstLastMissEntry,arrEntryGetFirstMissEntry,arrEntryGetLastEntry,arrEntryGetLastFirstMissEntry,arrEntryGetLastMissEntry} from "./arrEntry"
 export {arrEntry,arrEntryGetFirstEntry,arrEntryGetFirstLastMissEntry,arrEntryGetFirstMissEntry,arrEntryGetLastEntry,arrEntryGetLastFirstMissEntry,arrEntryGetLastMissEntry,};

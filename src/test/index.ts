@@ -2,6 +2,7 @@ import arrFind from "./testArrFind"
 import arrFilter from "./testArrFilter"
 import arrConnest from "./testArrConnect"
 import arrRmEntry from "./testArrRmEntry"
+import testArrRmDoubles from "./testArrRmDoubles"
 import arrEntry from "./testArrEntry"
 function wait(timems:number=3000):Promise<void>{
 	return new Promise(function(resolve,reject){
@@ -19,6 +20,8 @@ function wait(timems:number=3000):Promise<void>{
 	await arrConnest();
 	await wait(20);
 	await arrRmEntry();
+	await wait(20);
+	await testArrRmDoubles();
 	await wait(20);
 	await arrEntry();
 })();
