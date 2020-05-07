@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const darkLib = require("../index");
+// testing for strFill in timer
 class timer {
     constructor(name, expectedTimeLength = 3) {
         Object.defineProperty(this, "start", {

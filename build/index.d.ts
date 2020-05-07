@@ -1,12 +1,12 @@
 import { arrFind, arrFindFuncAsync, arrFindAsync } from "./arrFind";
-import { arrFilter, arrFilterFuncAsync, arrFilterAsync } from "./arrFilter";
-import { arrConnects } from "./arrConnects";
-import { arrRmEntry } from "./arrRmEntry";
-import { arrEntry, arrEntryGetFirstEntry, arrEntryGetFirstLastMissEntry, arrEntryGetFirstMissEntry, arrEntryGetLastEntry, arrEntryGetLastFirstMissEntry, arrEntryGetLastMissEntry } from "./arrEntry";
-import { strFill } from "./strFill";
 export { arrFind, arrFindFuncAsync, arrFindAsync, };
+import { arrFilter, arrFilterFuncAsync, arrFilterAsync } from "./arrFilter";
 export { arrFilter, arrFilterFuncAsync, arrFilterAsync, };
+import { arrConnects } from "./arrConnects";
 export { arrConnects, };
+import { arrRmEntry } from "./arrRmEntry";
 export { arrRmEntry, };
+import { arrEntry, arrEntryGetFirstEntry, arrEntryGetFirstLastMissEntry, arrEntryGetFirstMissEntry, arrEntryGetLastEntry, arrEntryGetLastFirstMissEntry, arrEntryGetLastMissEntry } from "./arrEntry";
 export { arrEntry, arrEntryGetFirstEntry, arrEntryGetFirstLastMissEntry, arrEntryGetFirstMissEntry, arrEntryGetLastEntry, arrEntryGetLastFirstMissEntry, arrEntryGetLastMissEntry, };
+import { strFill } from "./strFill";
 export { strFill, };

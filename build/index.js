@@ -1,4 +1,5 @@
 "use strict";
+// array
 Object.defineProperty(exports, "__esModule", { value: true });
 const arrFind_1 = require("./arrFind");
 exports.arrFind = arrFind_1.arrFind;
@@ -20,5 +21,6 @@ exports.arrEntryGetFirstMissEntry = arrEntry_1.arrEntryGetFirstMissEntry;
 exports.arrEntryGetLastEntry = arrEntry_1.arrEntryGetLastEntry;
 exports.arrEntryGetLastFirstMissEntry = arrEntry_1.arrEntryGetLastFirstMissEntry;
 exports.arrEntryGetLastMissEntry = arrEntry_1.arrEntryGetLastMissEntry;
+// string
 const strFill_1 = require("./strFill");
 exports.strFill = strFill_1.strFill;

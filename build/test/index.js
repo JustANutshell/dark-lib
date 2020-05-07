@@ -13,14 +13,14 @@ function wait(timems = 3000) {
     });
 }
 (async function () {
-    wait(100);
+    await wait(10);
     await testArrFind_1.default();
-    wait(200);
+    await wait(20);
     await testArrFilter_1.default();
-    wait(200);
+    await wait(20);
     await testArrConnect_1.default();
-    wait(200);
+    await wait(20);
     await testArrRmEntry_1.default();
-    wait(200);
+    await wait(20);
     await testArrEntry_1.default();
 })();

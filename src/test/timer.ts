@@ -1,4 +1,5 @@
 import * as darkLib from "../index"
+// testing for strFill in timer
 export default class timer{
 	start:Date;
 	name:string;
